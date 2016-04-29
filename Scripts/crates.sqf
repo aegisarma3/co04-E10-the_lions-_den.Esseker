@@ -1,0 +1,12 @@
+cx1 attachTo[truck_1,[0,0.8,-0.4]];
+cx2 attachTo[truck_1,[0,-0.0,-0.4]];
+cx3 attachTo[truck_1,[0,-0.8,-0.4]];
+cx4 attachTo[truck_1,[0,-1.6,-0.4]];
+cx5 attachTo[truck_1,[0,-2.4,-0.4]];
+cx6 attachTo[truck_1,[0,-3.2,-0.4]];
+cx7 attachTo[truck_1,[0,0.8,0.42]];
+cx8 attachTo[truck_1,[0,-0.0,0.42]];
+cx9 attachTo[truck_1,[0,-0.8,0.42]];
+cx10 attachTo[truck_1,[0,-1.6,0.42]];
+cx11 attachTo[truck_1,[0,-2.4,0.42]];
+cx12 attachTo[truck_1,[0,-3.2,0.42]];
