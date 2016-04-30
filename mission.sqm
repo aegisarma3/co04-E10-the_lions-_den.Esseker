@@ -8,7 +8,7 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=3612;
+		nextID=3615;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=351;
+		nextID=362;
 	};
 	class Camera
 	{
-		pos[]={127.95139,333.92859,2748.0952};
-		dir[]={0.96136898,-0.078318089,0.26409113};
-		up[]={0.075543508,0.99692112,0.020752018};
-		aside[]={0.26490358,-6.0317689e-008,-0.96432912};
+		pos[]={6639.3057,209.37309,3967.0281};
+		dir[]={-0.35163286,-0.14836466,0.92440122};
+		up[]={-0.052735034,0.98894435,0.13863337};
+		aside[]={0.93475831,-3.4825644e-007,0.35557628};
 	};
 };
 binarizationWanted=0;
@@ -52,7 +52,8 @@ addons[]=
 	"cup_castructures_e_misc_misc_market",
 	"A3_Characters_F_Civil",
 	"A3_Modules_F_Events",
-	"nielsen_cim"
+	"nielsen_cim",
+	"ace_tagging"
 };
 randomSeed=9193689;
 class ScenarioData
@@ -236,7 +237,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=100;
+		items=102;
 		class Item0
 		{
 			dataType="Marker";
@@ -1039,7 +1040,6 @@ class Mission
 				};
 			};
 			id=2848;
-			atlOffset=92.715866;
 		};
 		class Item3
 		{
@@ -1530,7 +1530,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={6804.833,252.96466,4050.6179};
-					angle=1.4115523;
+					angle=1.4115522;
 					class Attributes
 					{
 						text="obj02_trigger";
@@ -1550,7 +1550,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={6821.854,252.41428,4048.9719};
-					angle=1.4115523;
+					angle=1.4115522;
 					class Attributes
 					{
 						text="obj03_trigger";
@@ -2975,7 +2975,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={5245.4697,194.94873,4499.1021};
-							angle=3.1909323;
+							angle=3.190932;
 							class Attributes
 							{
 								name="r6";
@@ -5678,7 +5678,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6639.1274,208.87305,3966.5283};
+						position[]={6638.6421,209.01761,3971.6025};
+						angles[]={0,5.230113,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -6575,6 +6576,97 @@ class Mission
 			colorName="ColorBlue";
 			id=3611;
 			atlOffset=3.0517578e-005;
+		};
+		class Item100
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6639.9771,209.54565,3967.4871};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="smoke_f";
+			};
+			id=3613;
+			type="ACE_Item_SpraypaintRed";
+			atlOffset=0.27146912;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="enableSimulation";
+					expression="if !(is3DEN) then {_this enablesimulation _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item101
+		{
+			dataType="Trigger";
+			position[]={6641.2729,207.45741,3969.7981};
+			class Attributes
+			{
+				condition="!alive comb_01 && !alive comb_02 && !alive comb_03 && !alive comb_04 && !alive comb_05 && !alive comb_06";
+				onActivation="null = [smoke_f,3,time,false,false] spawn BIS_Effects_Burn";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=3614;
+			type="EmptyDetector";
 		};
 	};
 	class Connections
